@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Make change
-        run: echo "Hello world txt (after dropping create/approve PRs flag)" > hello.txt
+        run: echo "Hello world txt" > hello.txt
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
