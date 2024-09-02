@@ -9,7 +9,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - name: Make change
-        run: echo "Hello world txt" > hello.txt
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+      - name: Create Manual Pull Request
+        run: gh pr create --title "manual auto-creation" --body "empty"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
