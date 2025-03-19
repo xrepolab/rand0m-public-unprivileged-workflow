@@ -2,6 +2,7 @@ name: PR Target Workflow
 
 on:
   pull_request_target:
+    branches: main
 
 jobs:
   check-secret:
