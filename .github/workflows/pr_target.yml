@@ -1,0 +1,21 @@
+name: PR Target Workflow
+
+on:
+  pull_request_target:
+    branches: main
+
+jobs:
+  check-secret:
+    runs-on: ubuntu-latest
+    environment: production  # Replace with your environment name
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Access Environment Secret
+        env:
+          ENV_SECRET: ${{ secrets.ENV_SECRET }}
+        run: |
+          echo "Environment secret retrieved successfully"
+          # Use the secret without printing it
+          echo "Secret length: ${#ENV_SECRET}"
